@@ -50,6 +50,7 @@ impl<T> Drop for RawVec<T> {
     }
 }
 
+unsafe impl<T> Send for RawVec<T> where T: Send {}
 unsafe impl<T> Sync for RawVec<T> where T: Sync {}
 
 pub struct BucketVec<T> {
